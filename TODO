@@ -1,0 +1,4 @@
+
+  0. A user should be able to register
+  1. An admin should be able to create posts
+  2. A signed in user should be able to create comments

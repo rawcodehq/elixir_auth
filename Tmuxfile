@@ -1,0 +1,16 @@
+session "blog"
+directory "/home/minhajuddin/code/blog"
+
+window "src", [
+  pane("vim TODO"),
+]
+
+window "server-iex", [
+  pane("iex -S mix phoenix.server"),
+  pane("iex -S mix", :horizontal),
+]
+
+window "scratch", [
+  pane("git status"),
+]
+# vim: filetype=ruby
