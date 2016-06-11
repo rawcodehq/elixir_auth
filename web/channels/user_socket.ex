@@ -1,8 +1,10 @@
 defmodule Blog.UserSocket do
   use Phoenix.Socket
+  use Guardian.Phoenix.Socket
+
 
   ## Channels
-  # channel "rooms:*", Blog.RoomChannel
+  channel "rooms:*", Blog.RoomChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket
@@ -20,7 +22,8 @@ defmodule Blog.UserSocket do
   # See `Phoenix.Token` documentation for examples in
   # performing token verification on connect.
   def connect(_params, socket) do
-    {:ok, socket}
+    :error
+    #{:ok, socket}
   end
 
   # Socket id's are topics that allow you to identify all sockets for a given user:

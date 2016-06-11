@@ -1,18 +1,14 @@
-<h2>Show post</h2>
+<h2 class=page-header><%= @post.title %></h2>
+<div><%= @post.body %></div>
 
-<ul>
+<div id="comments"></div>
+<div class="row">
+<textarea id="input" class="form-input" cols=30 rows="5"></textarea>
+<br />
+<button id=submit>Submit Comment</button>
+</div>
 
-  <li>
-    <strong>Title:</strong>
-    <%= @post.title %>
-  </li>
-
-  <li>
-    <strong>Body:</strong>
-    <%= @post.body %>
-  </li>
-
-</ul>
-
-<%= link "Edit", to: post_path(@conn, :edit, @post) %>
-<%= link "Back", to: post_path(@conn, :index) %>
+<script>
+  window.postID = <%= @post.id %>;
+  window.guardianToken = "<%= @conn.private[:guardian_default_jwt]  || ""  %>";
+</script>
