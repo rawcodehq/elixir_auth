@@ -5,14 +5,8 @@ defmodule Blog.LoadCurrentUser do
   end
 
   # when you a get a request
-  def call(conn, opts) do
-    user_id = Plug.Conn.get_session(conn, :user_id)
-
-    if user_id do
-      user = Blog.Repo.get(Blog.User, user_id)
-      Plug.Conn.assign(conn, :current_user, user)
-    else
-      conn
-    end
+  def call(conn, _opts) do
+    current_user = Guardian.Plug.current_resource(conn)
+    Plug.Conn.assign(conn, :current_user, current_user)
   end
 end

@@ -11,7 +11,8 @@ defmodule Blog.SessionController do
     if valid do
       # save this so that other requests can use this info
       conn
-      |> put_session(:user_id, user.id)
+      #|> put_session(:user_id, user.id) # store our user in the session
+      |> Guardian.Plug.sign_in(user)
       |> redirect(to: "/")
     else
       # TODO: add error msg

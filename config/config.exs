@@ -28,12 +28,11 @@ config :phoenix, :generators,
   migration: true,
   binary_id: false
 
-
 config :guardian, Guardian,
-  #allowed_algos: ["HS512"], # optional
-  #verify_module: Guardian.JWT,  # optional
+  allowed_algos: ["HS512"], # optional
+  verify_module: Guardian.JWT,  # optional
   issuer: "Blog",
   ttl: { 30, :days },
-  #verify_issuer: true, # optional
-  secret_key: "VlRTiqjdW7epTi0QIlUo8UJlnoKrN8qPRdexbnLQOqeQ/xBRHXoJs5xdQ3bPxOQ2",
+  verify_issuer: true, # optional
+  secret_key: "XV+iH8jP9yXim90L5XQBsytqhTb55OZ1iArj/cRmO640ueo6aBWVwpHsBnmkL6vD", #System.get_env("BLOG_JWT_TOKEN"), #"XV+iH8jP9yXim90L5XQBsytqhTb55OZ1iArj/cRmO640ueo6aBWVwpHsBnmkL6vD",
   serializer: Blog.GuardianSerializer
