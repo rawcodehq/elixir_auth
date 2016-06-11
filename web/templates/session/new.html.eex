@@ -1,0 +1,10 @@
+<h1>Log in</h1>
+
+<%= form_for @conn, "/session", [as: :session], fn(f)-> %>
+<%= text_input f, :email, placeholder: "Email" %>
+<br>
+<%= password_input f, :password, placeholder: "Password"  %>
+<br>
+<%= submit "Login" %>
+<% end %>
+

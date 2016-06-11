@@ -19,7 +19,7 @@ defmodule Blog.Mixfile do
   def application do
     [mod: {Blog, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+      :phoenix_ecto, :postgrex, :comeonin]]
   end
 
   # Specifies which paths to compile per environment.
@@ -34,9 +34,16 @@ defmodule Blog.Mixfile do
      {:postgrex, ">= 0.0.0"},
      {:phoenix_ecto, "~> 2.0"},
      {:phoenix_html, "~> 2.4"},
-     {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.9"},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+
+     {:comeonin, "~> 2.4"},
+     {:guardian, "~> 0.12.0"},
+
+     {:phoenix_live_reload, "~> 1.0", only: :dev},
+     {:credo, "~> 0.3.10", only: [:dev, :test]},
+     {:dialyxir, "~> 0.3.3", only: [:dev, :test]},
+   ]
   end
 
   # Aliases are shortcut or tasks specific to the current project.

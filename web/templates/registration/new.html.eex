@@ -1,0 +1,9 @@
+<h1>Register</h1>
+
+<%= form_for @conn, "/register", [as: :register], fn(f)-> %>
+<%= text_input f, :email, placeholder: "Email" %>
+<br>
+<%= password_input f, :password, placeholder: "Password"  %>
+<br>
+<%= submit "Register" %>
+<% end %>
