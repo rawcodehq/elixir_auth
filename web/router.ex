@@ -24,6 +24,7 @@ defmodule Blog.Router do
     post "/register", RegistrationController, :create
 
     resources "/session", SessionController, only: [:new, :create, :destroy]
+    resources "/posts", PostController
   end
 
   # Other scopes may use custom stacks.
